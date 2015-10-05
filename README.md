@@ -1,7 +1,7 @@
 # rateup
 rateup is a command line driven rate card transformation tool that allows you to take a supplier rate card and generate client rate cards based on different markup types.
 
-rateup supports rating based on classes (e.g. Mobiles/Local/National Rate) using dial pattern prefixes and varying markup types which can all de defined in the configuration file.
+rateup supports rating based on classes (e.g. Mobiles/Local/National Rate) using dial pattern prefixes and varying markup types which can all be defined in the configuration file.
 
 *rateup is currently a work in progress!*
 ### Usage
