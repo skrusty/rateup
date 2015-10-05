@@ -64,9 +64,9 @@ namespace rateup
                                 // loop through the input columns in the order they are to be output
                                 foreach (var col in config.InputFormats.Columns.OrderBy(x => x.Output.Id))
                                 {
-                                    if (col.Rate)
+                                    if (col.Rate && col.Id.HasValue)
                                     {
-                                        var val = csv.GetField<decimal>(col.Id);
+                                        var val = csv.GetField<decimal>(col.Id.Value);
                                         decimal outputVal = 0;
                                         // Get the expressions defined for this class and if restrictions are defined, apply them
                                         var useExpressions = matchClass.Expressions;
@@ -78,13 +78,22 @@ namespace rateup
                                             var expression = config.Expressions.Single(x => x.Name == exp.Name);
                                             outputVal += expression.Evaluate(val, exp.Param);
                                         }
-                                        if(o.Object.Verbose)
+                                        if (o.Object.Verbose)
                                             Console.WriteLine(
                                                 $"{matchPattern} rerated with class {matchClass.Name} from {val} to {outputVal}");
                                         csvW.WriteField(outputVal);
                                     }
                                     else
-                                        csvW.WriteField(csv.GetField(col.Id));
+                                    {
+                                        if (col.Id != null)
+                                        {
+                                            csvW.WriteField(csv.GetField(col.Id.Value));
+                                        }
+                                        else if(!string.IsNullOrEmpty(col.Output.DefaultValue))
+                                        {
+                                            csvW.WriteField(col.Output.DefaultValue);
+                                        }
+                                    }
                                 }
                                 // move to the next row for output
                                 csvW.NextRecord();

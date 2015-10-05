@@ -55,7 +55,7 @@ namespace rateup
 
     public class RateConfigurationInputFormatColumn
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public bool Rate { get; set; }
         public string[] Restrict { get; set; }
 
@@ -66,5 +66,6 @@ namespace rateup
     {
         public bool Output { get; set; }
         public int Id { get; set; }
+        public string DefaultValue { get; set; }
     }
 }
