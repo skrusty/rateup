@@ -39,7 +39,7 @@ By default an expression is passed 'x', the value of the column to be rated. Val
     "Expression": "x*y"
 }
 ```
-In this example we use an Expression to transform a rate by rounding its value to 4 decimal places, then converting it from pounds to pence (GBP to Pence).
+In this example we use an Expression to transform a rate by a percentage, round its value to 4 decimal places, then converting it from pounds to pence (GBP to Pence).
 ```json
 {
     "Name": "PercentageMarkup",
