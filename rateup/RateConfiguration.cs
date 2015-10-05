@@ -50,6 +50,7 @@ namespace rateup
     {
         public int MatchColumnId { get; set; }
         public string MatchPrefix { get; set; }
+        public bool HasHeaders { get; set; }
         public IList<RateConfigurationInputFormatColumn> Columns { get; set; }
     }
 

@@ -40,6 +40,8 @@ namespace rateup
                 {
                     using (var csv = new CsvReader(reader))
                     {
+                        if (config.InputFormats.HasHeaders)
+                            csv.Configuration.HasHeaderRecord = true;
                         using (var csvW = new CsvWriter(File.CreateText(o.Object.OutputFile)))
                         {
                             // Itterate each row in input file
