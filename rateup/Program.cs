@@ -57,7 +57,7 @@ namespace rateup
 
                                 if (matchClass == null)
                                 {
-                                    Console.WriteLine($"Failed for find class for {matchPattern}");
+                                    Console.WriteLine($"Failed to find class for {matchPattern}");
                                     continue;
                                 }
 
