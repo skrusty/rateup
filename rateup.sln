@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rateup", "rateup\rateup.csproj", "{1FB0FE7F-AD76-4098-8ECE-EFE89F805437}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config Examples", "Config Examples", "{05CEFEC7-3F42-44E8-A90B-74C26968A186}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\example1.json = Examples\example1.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FB0FE7F-AD76-4098-8ECE-EFE89F805437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB0FE7F-AD76-4098-8ECE-EFE89F805437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB0FE7F-AD76-4098-8ECE-EFE89F805437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB0FE7F-AD76-4098-8ECE-EFE89F805437}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
