@@ -1,104 +1,122 @@
 {
-    "Name": "Example 1",
-    "Expressions": [
+  "Name": "Example 1",
+  "Expressions": [
+    {
+      "Name": "PercentageMarkup",
+      "Expression": "x*y"
+    },
+    {
+      "Name": "FixedMarkup",
+      "Expression": "x+y"
+    }
+  ],
+  "Classes": [
+    {
+      "Name": "Mobile Rates",
+      "Pattern": "^447[0-9]",
+      "Priority": 1,
+      "Expressions": [
         {
-            "Name": "PercentageMarkup",
-            "Expression": "x*y"
-        },
-        {
-            "Name": "FixedMarkup",
-            "Expression": "x+y"
+          "Name": "PercentageMarkup",
+          "Param": "1.5"
         }
-    ],
-    "Classes": [
+      ]
+    },
+    {
+      "Name": "UK Local",
+      "Pattern": "^44[1-3]",
+      "Priority": 1,
+      "Expressions": [
         {
-            "Name": "Mobile Rates",
-            "Pattern": "^447[0-9]",
-            "Priority":  1,
-            "Expressions": [
-                {
-                    "Name": "PercentageMarkup",
-                    "Param":  "1.5"
-                }
-            ]
-        },
-        {
-            "Name": "UK Local",
-            "Pattern": "^44[1-3]",
-            "Priority":  1,
-            "Expressions": [
-                {
-                    "Name": "PercentageMarkup",
-                    "Param":  "1.2"
-                }
-            ]
-        },
-        {
-            "Name": "Default UK Class",
-            "Pattern": "^44",
-            "Priority":  1,
-            "Expressions": [
-                {
-                    "Name": "PercentageMarkup",
-                    "Param":  "2"
-                }
-            ]
-        },
-        {
-            "Name": "Default Worldwide Class",
-            "Pattern": "^(?<!44)",
-            "Priority":  0,
-            "Expressions": [
-                {
-                    "Name": "PercentageMarkup",
-                    "Param":  "1.22"
-                }
-            ]
+          "Name": "PercentageMarkup",
+          "Param": "1.2"
         }
-    ],
-    "InputFormats": {
-      "MatchColumnId": [ 0 ],
-      "Columns": [
+      ]
+    },
+    {
+      "Name": "Default UK Class",
+      "Pattern": "^44",
+      "Priority": 1,
+      "Expressions": [
         {
-            "Id": 0,
-            "Rate": false,
-            "Output": {
-                "Output": true,
-                "Id": 0
-            }
-        },
+          "Name": "PercentageMarkup",
+          "Param": "2"
+        }
+      ]
+    },
+    {
+      "Name": "Default Worldwide Class",
+      "Pattern": "^(?<!44)",
+      "Priority": 0,
+      "Expressions": [
         {
-            "Id": 1,
-            "Rate": false,
-            "Output": {
-                "Output": true,
-                "Id": 1
-            }
-        },
-        {
-            "Id": 2,
-            "Rate": true,
-            "Output": {
-                "Output": true,
-                "Id": 2
-            }
-        },
-        {
-            "Id": 3,
-            "Rate": true,
-            "Output": {
-                "Output": true,
-                "Id": 3
-            }
-        },
-        {   
-            "Id": 4,
-            "Rate": true,
-            "Output": {
-                "Output": true,
-                "Id": 4
-            }
+          "Name": "PercentageMarkup",
+          "Param": "1.22"
         }
       ]
     }
+  ],
+  "InputFormats": {
+    "MatchColumnId": [ 0 ],
+    "HasHeaders": true
+  },
+  "OutputFormat": {
+    "HasHeaders": true,
+    "Columns": [
+      {
+        "Id": 0,
+        "InputId": 0,
+        "Header": "Prefix",
+        "Rate": false
+      },
+      {
+        "Id": 1,
+        "InputId": 1,
+        "Header": "Description",
+        "Rate": false
+      },
+      {
+        "Id": 2,
+        "InputId": 2,
+        "Header": "BandA_PerMin",
+        "Rate": true
+      },
+      {
+        "Id": 3,
+        "InputId": 4,
+        "Header": "BandB_PerMin",
+        "Rate": true
+      },
+      {
+        "Id": 4,
+        "InputId": 6,
+        "Header": "BandC_PerMin",
+        "Rate": true
+      },
+      {
+        "Id": 5,
+        "InputId": 3,
+        "Header": "BandA_Conn",
+        "Rate": true
+      },
+      {
+        "Id": 6,
+        "InputId": 5,
+        "Header": "BandB_Conn",
+        "Rate": true
+      },
+      {
+        "Id": 7,
+        "InputId": 7,
+        "Header": "BandC_Conn",
+        "Rate": true
+      },
+      {
+        "Id": 8,
+        "Header": "MinRatePerMin",
+        "Rate": false,
+        "DefaultValue": "0"
+      }
+    ]
+  }
 }
