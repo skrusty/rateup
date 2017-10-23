@@ -10,6 +10,8 @@ namespace rateup
         public IList<RateCofigurationClass> Classes { get; set; }
         public RateConfigurationInputFormat InputFormats { get; set; }
         public IList<RateConfigExpression> Expressions { get; set; }
+        public RateConfigurationOutputFormat OutputFormat { get; set; }
+
     }
 
     public class RateCofigurationClass
@@ -48,25 +50,27 @@ namespace rateup
 
     public class RateConfigurationInputFormat
     {
-        public int MatchColumnId { get; set; }
+        public int[] MatchColumnId { get; set; }
         public string MatchPrefix { get; set; }
         public bool HasHeaders { get; set; }
-        public IList<RateConfigurationInputFormatColumn> Columns { get; set; }
+        
     }
 
-    public class RateConfigurationInputFormatColumn
+    public class RateConfigurationOutputFormat
+    {
+        public bool HasHeaders { get; set; }
+        public IList<RateConfigurationOutputFormatColumn> Columns { get; set; }
+    }
+
+    public class RateConfigurationOutputFormatColumn
     {
         public int? Id { get; set; }
+        public int? InputId { get; set; }
         public bool Rate { get; set; }
+        public string Header { get; set; }
         public string[] Restrict { get; set; }
-
-        public RateConfigurationInputFormatColumnOutput Output { get; set; }
-    }
-
-    public class RateConfigurationInputFormatColumnOutput
-    {
-        public bool Output { get; set; }
-        public int Id { get; set; }
         public string DefaultValue { get; set; }
+
     }
+    
 }

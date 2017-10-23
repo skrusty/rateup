@@ -57,49 +57,48 @@
         }
     ],
     "InputFormats": {
-        "MatchColumnId": 0,
-        // "MatchPrefix":  "",
-        "Columns": [
-            {
-                "Id": 0,
-                "Rate": false,
-                "Output": {
-                    "Output": true,
-                    "Id": 0
-                }
-            },
-            {
-                "Id": 1,
-                "Rate": false,
-                "Output": {
-                    "Output": true,
-                    "Id": 1
-                }
-            },
-            {
-                "Id": 2,
-                "Rate": true,
-                "Output": {
-                    "Output": true,
-                    "Id": 2
-                }
-            },
-            {
-                "Id": 3,
-                "Rate": true,
-                "Output": {
-                    "Output": true,
-                    "Id": 3
-                }
-            },
-            {   
-                "Id": 4,
-                "Rate": true,
-                "Output": {
-                    "Output": true,
-                    "Id": 4
-                }
+      "MatchColumnId": [ 0 ],
+      "Columns": [
+        {
+            "Id": 0,
+            "Rate": false,
+            "Output": {
+                "Output": true,
+                "Id": 0
             }
-        ]
+        },
+        {
+            "Id": 1,
+            "Rate": false,
+            "Output": {
+                "Output": true,
+                "Id": 1
+            }
+        },
+        {
+            "Id": 2,
+            "Rate": true,
+            "Output": {
+                "Output": true,
+                "Id": 2
+            }
+        },
+        {
+            "Id": 3,
+            "Rate": true,
+            "Output": {
+                "Output": true,
+                "Id": 3
+            }
+        },
+        {   
+            "Id": 4,
+            "Rate": true,
+            "Output": {
+                "Output": true,
+                "Id": 4
+            }
+        }
+      ]
     }
 }
